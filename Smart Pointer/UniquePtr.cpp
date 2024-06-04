@@ -19,17 +19,17 @@ class CUniqurPtr
     }
 
     //delete copy constructor and copy assignment
-    CUniqurPtr(const CUniqurPtr&) = delete;
-    CUniqurPtr& operator=(const CUniqurPtr&) = delete;
+    CUniqurPtr(const CUniqurPtr<T>&) = delete;
+    CUniqurPtr<T>& operator=(const CUniqurPtr<T>&) = delete;
 
     //Move constructor
-    CUniqurPtr(CUniqurPtr&& t_other) : m_ptr(t_other.m_ptr)
+    CUniqurPtr(CUniqurPtr<T>&& t_other) : m_ptr(t_other.m_ptr)
     {
         t_other = nullptr;
     }
 
     //move assignment operator
-    CUniqurPtr& operator=(CUniqurPtr&& t_other)
+    CUniqurPtr<T>& operator=(CUniqurPtr<T>&& t_other)
     {
         if(this != &t_other)
         {
@@ -40,6 +40,12 @@ class CUniqurPtr
 
         return *this;
     }
+
+    void operator=(std::nullptr_t x)
+    {
+        delete m_ptr;
+        m_ptr = nullptr;
+    } 
 
     T& operator*() const
     {
@@ -108,6 +114,9 @@ int main(void)
         std::cout << "Pointer ptr2 is null.\n";
     }
     delete rawPtr;
+
+    CUniqurPtr<Test> ptr3(new Test());
+    ptr3 = nullptr;
 
     return 0;
 }
