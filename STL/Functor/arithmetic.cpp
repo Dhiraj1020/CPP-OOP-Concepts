@@ -1,5 +1,3 @@
-// arithmetic.cpp by Bill Weinman <http://bw.org/>
-// 2018-11-06 for CppSTL
 #include <iostream>
 #include <functional>
 #include <algorithm>

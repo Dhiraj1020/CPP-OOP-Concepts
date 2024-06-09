@@ -1,5 +1,3 @@
-// functor.cpp by Bill Weinman <http://bw.org/>
-// 2018-09-27 for CppSTL
 #include <iostream>
 using namespace std;
 
