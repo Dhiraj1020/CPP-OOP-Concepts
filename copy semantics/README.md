@@ -8,7 +8,7 @@
 
     ClassName(const ClassName &source);
 
-+important to define a copy constructor explicitly?
++ important to define a copy constructor explicitly?
 
     It's important to define a copy constructor explicitly when your class manages resources that require deep copying, like dynamically allocated memory, file handles, or network connections. The default copy constructor provided by the compiler performs a shallow copy, which simply copies the pointers, not the actual resources they point to. This can lead to problems such as:
 
@@ -16,7 +16,8 @@
     Data Corruption: Modifying the resource through one object will affect the other object as they share the same resource.
     By defining a copy constructor, you ensure that each object gets its own copy of the resource, preventing these issues.
 
-+difference between a copy constructor and an assignment operator in C++
++ difference between a copy constructor and an assignment operator in C++
+
     The copy constructor and the assignment operator both deal with copying objects, but they serve different purposes and are called in different scenarios. The copy constructor is used to create a new object as a copy of an existing object. It is invoked when a new object is created from an existing one, such as when an object is passed by value to a function or returned from a function by value.
 
     The assignment operator, on the other hand, is used to copy the contents of one existing object to another existing object. It is invoked when you use the = operator to assign one object to another after both objects have already been created.
@@ -24,7 +25,8 @@
     MyClass obj1 = obj2; // Invokes the copy constructor
     obj1 = obj2; // Invokes the assignment operator
 
-+What is a shallow copy and a deep copy? How does a copy constructor ensure a deep copy?
++ What is a shallow copy and a deep copy? How does a copy constructor ensure a deep copy?
+
     A shallow copy duplicates as little as possible. For example, if an object contains a pointer to dynamically allocated memory, a shallow copy will copy the pointer value, not the memory it points to. This can lead to multiple objects pointing to the same memory, causing issues like double deletion or data corruption.
 
     A deep copy, on the other hand, duplicates everything the original object owns, including any dynamically allocated memory. This ensures that each object has its own copy of the memory, preventing the issues associated with shallow copying.
