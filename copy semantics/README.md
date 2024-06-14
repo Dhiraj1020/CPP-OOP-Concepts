@@ -63,6 +63,7 @@
     Defining a custom copy constructor ensures that a deep copy is made, where each object gets its own copy of the memory.
 
 + How does the Rule of Three relate to copy constructors?
+
     The Rule of Three in C++ states that if a class requires a custom destructor, copy constructor, or copy assignment operator, it likely requires all three. This rule arises because these three functions often deal with resource management, such as dynamic memory allocation, and failing to properly define one can lead to issues like resource leaks or double deletions.
 
     For example, if a class allocates memory in its constructor, it should also define a destructor to free that memory. Similarly, if it defines a destructor, it should also define a copy constructor and copy assignment operator to ensure that copies of the object manage their own memory correctly.
