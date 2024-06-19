@@ -59,3 +59,26 @@ int main(void)
     //int &tRef; // required initilizer -- compile time error
     //tRef = i;
 }
+
+
+/*
+output : 
+
+size of reference variable in class  : 8
+i = 10
+iRef = 10
+Address of i = 0x5ffe8c
+Address of iRef = 0x5ffe8c
+Address of iRef in FuntionPram= 0x5ffe8c
+iRef after function call = 20
+Address of iRef after function call = 0x5ffe8c
+size of i = 4
+size of iRef = 4
+c = D
+cRef = D
+Address of c = D
+Address of cRef = D
+size of c : 1
+size of cRef : 1
+
+*/
